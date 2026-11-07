@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danish Mulla | Data Analyst / Business Analyst / Business Intelligence Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        slate: {
+                            850: '#111827',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 light:bg-slate-50 light:text-slate-800 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-slate-950/80 light:bg-white/80 backdrop-blur-md border-b border-slate-800/80 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center font-bold text-white shadow-lg shadow-brand-500/30">
+                    DM
+                </div>
+                <span class="font-bold text-lg tracking-tight text-white light:text-slate-900">Danish Mulla</span>
+                <span class="hidden md:inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 light:bg-emerald-100 light:text-emerald-700 border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+                    Immediate Joiner
+                </span>
+            </div>
+
+            <!-- Global Search & Menu -->
+            <div class="flex items-center space-x-4">
+                <div class="relative hidden sm:block w-48 lg:w-64">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input type="text" id="global-search" oninput="handleSearch(this.value)" placeholder="Search skills, tools, metrics..." class="w-full bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-300 rounded-full py-1.5 pl-8 pr-4 text-xs text-slate-200 light:text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+
+                <div class="flex items-center space-x-2 border-l border-slate-800 light:border-slate-200 pl-4">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg text-slate-400 hover:text-white light:hover:text-slate-900 transition-colors" title="Toggle Theme">
+                        <i id="theme-icon" class="fa-solid fa-moon"></i>
+                    </button>
+                    <a href="#contact" class="hidden sm:inline-flex bg-brand-600 hover:bg-brand-500 text-white font-medium text-xs px-4 py-2 rounded-lg transition-all shadow-md shadow-brand-600/20">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <!-- Hero Section -->
+        <section class="relative rounded-2xl overflow-hidden glass-card p-6 sm:p-10 border border-slate-800/80">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/80 light:bg-slate-200 border border-slate-700/60 light:border-slate-300 text-xs text-slate-300 light:text-slate-700 font-mono">
+                        <i class="fa-solid fa-briefcase text-brand-400"></i>
+                        <span>3.5+ Years Experience • Former TCS System Engineer</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white light:text-slate-900 leading-tight">
+                        Data Analyst / Business Analyst / <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-300">Business Intelligence Engineer</span>
+                    </h1>
+
+                    <p class="text-slate-300 light:text-slate-600 text-base sm:text-lg leading-relaxed">
+                        Specialized in turning complex enterprise data into executive-ready insights across relational databases, analytical data warehouses, and cloud platforms including <strong class="text-white light:text-slate-900 font-semibold">Google Cloud Platform</strong>. Proficient in <strong class="text-white light:text-slate-900 font-semibold">Advanced SQL</strong>, <strong class="text-white light:text-slate-900 font-semibold">Python</strong>, <strong class="text-white light:text-slate-900 font-semibold">Power BI (DAX, Power Query, Star Schema)</strong>, and <strong class="text-white light:text-slate-900 font-semibold">Statistics</strong>.
+                    </p>
+
+                    <!-- Contact Bar -->
+                    <div class="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-300 light:text-slate-600 pt-2">
+                        <div class="flex items-center space-x-2 bg-slate-900/60 light:bg-slate-100 px-3 py-1.5 rounded-md border border-slate-800 light:border-slate-200">
+                            <i class="fa-solid fa-location-dot text-brand-400"></i>
+                            <span>Open for Bangalore, Hyderabad, Pune & Remote</span>
+                        </div>
+                        <a href="mailto:daanishindian@gmail.com" class="flex items-center space-x-2 bg-slate-900/60 light:bg-slate-100 px-3 py-1.5 rounded-md border border-slate-800 light:border-slate-200 hover:border-brand-500 transition-colors">
+                            <i class="fa-solid fa-envelope text-brand-400"></i>
+                            <span>daanishindian@gmail.com</span>
+                        </a>
+                        <a href="tel:+919731879556" class="flex items-center space-x-2 bg-slate-900/60 light:bg-slate-100 px-3 py-1.5 rounded-md border border-slate-800 light:border-slate-200 hover:border-brand-500 transition-colors">
+                            <i class="fa-solid fa-phone text-brand-400"></i>
+                            <span>+91 97318 79556</span>
+                        </a>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#projects" class="bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm px-6 py-2.5 rounded-lg transition-all shadow-lg shadow-brand-600/30 flex items-center space-x-2">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <a href="https://github.com/DanishMullaData" target="_blank" class="bg-slate-900 light:bg-slate-200 hover:bg-slate-800 light:hover:bg-slate-300 text-white light:text-slate-800 font-medium text-sm px-5 py-2.5 rounded-lg border border-slate-800 light:border-slate-300 transition-all flex items-center space-x-2">
+                            <i class="fa-brands fa-github text-lg"></i>
+                            <span>GitHub Profile</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="bg-slate-900 light:bg-slate-200 hover:bg-slate-800 light:hover:bg-slate-300 text-sky-400 light:text-sky-600 font-medium text-sm px-5 py-2.5 rounded-lg border border-slate-800 light:border-slate-300 transition-all flex items-center space-x-2">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Highlights Stats Card -->
+                <div class="lg:col-span-4 grid grid-cols-1 gap-4">
+                    <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-1">
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>REPORTING EFFICIENCY</span>
+                            <i class="fa-solid fa-clock text-brand-400"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-brand-400">12+ Hours</div>
+                        <p class="text-xs text-slate-400">Saved weekly via automated Power BI & SQL reporting pipelines at TCS.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-1">
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>PROCESS OPTIMIZATION</span>
+                            <i class="fa-solid fa-chart-line text-emerald-400"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-emerald-400">~40%</div>
+                        <p class="text-xs text-slate-400">Reduction in loan turnaround time via A/B testing & statistical modeling.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-1">
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>PIPELINE ACCURACY</span>
+                            <i class="fa-solid fa-shield-halved text-indigo-400"></i>
+                        </div>
+                        <div class="text-3xl font-extrabold text-indigo-400">99.0%</div>
+                        <p class="text-xs text-slate-400">Pipeline reliability maintained across multi-source legacy database integrations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white light:text-slate-900 flex items-center space-x-2">
+                        <i class="fa-solid fa-code text-brand-400"></i>
+                        <span>Core Technical Skills</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm">Engineered around modern enterprise analytics & BI standards</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- Skill Card 1 -->
+                <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3 hover:border-brand-500/50 transition-all">
+                    <div class="w-9 h-9 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-base">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-white light:text-slate-900">BI & Data Modeling</h3>
+                    <ul class="space-y-1.5 text-xs text-slate-300 light:text-slate-600">
+                        <li>Power BI</li>
+                        <li>DAX</li>
+                        <li>Power Query</li>
+                        <li>Star Schema / Snowflake Schema</li>
+                        <li>MS Excel</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3 hover:border-brand-500/50 transition-all">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-base">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-white light:text-slate-900">Languages & Querying</h3>
+                    <ul class="space-y-1.5 text-xs text-slate-300 light:text-slate-600">
+                        <li>SQL (Window Functions, CTEs)</li>
+                        <li>Query Optimization & Indexing</li>
+                        <li>Python (Pandas, NumPy)</li>
+                        <li>Matplotlib & Seaborn</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3 hover:border-brand-500/50 transition-all">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-base">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-white light:text-slate-900">Statistics & Analytics</h3>
+                    <ul class="space-y-1.5 text-xs text-slate-300 light:text-slate-600">
+                        <li>Statistics</li>
+                        <li>A/B Testing</li>
+                        <li>Hypothesis Testing</li>
+                        <li>Predictive Analytics</li>
+                        <li>Machine Learning & SHAP</li>
+                        <li>Data Validation</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3 hover:border-brand-500/50 transition-all">
+                    <div class="w-9 h-9 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold text-base">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-white light:text-slate-900">Engineering & Cloud</h3>
+                    <ul class="space-y-1.5 text-xs text-slate-300 light:text-slate-600">
+                        <li>Google Cloud Platform (BigQuery)</li>
+                        <li>Oracle SQL & MySQL</li>
+                        <li>Spark SQL</li>
+                        <li>REST APIs</li>
+                        <li>ETL / ELT Pipelines</li>
+                        <li>Microsoft Azure</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3 hover:border-brand-500/50 transition-all">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-base">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-white light:text-slate-900">Tools & Environment</h3>
+                    <ul class="space-y-1.5 text-xs text-slate-300 light:text-slate-600">
+                        <li>Git & GitHub</li>
+                        <li>Linux & Shell Scripting</li>
+                        <li>Jira & Agile/Scrum</li>
+                        <li>BRD / FRD Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Projects Showcase -->
+        <section id="projects" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white light:text-slate-900 flex items-center space-x-2">
+                        <i class="fa-solid fa-folder-open text-brand-400"></i>
+                        <span>Featured Projects</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm">Real-world analytics pipelines, statistical tests, and BI systems</p>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap gap-2 text-xs font-medium">
+                    <button onclick="filterProjects('all')" id="btn-all" class="project-filter-btn active bg-brand-600 text-white px-3 py-1.5 rounded-lg transition-all">
+                        All Projects
+                    </button>
+                    <button onclick="filterProjects('bi')" id="btn-bi" class="project-filter-btn bg-slate-900 light:bg-slate-200 text-slate-300 light:text-slate-700 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-800 light:border-slate-300 transition-all">
+                        BI & Dashboards
+                    </button>
+                    <button onclick="filterProjects('stats')" id="btn-stats" class="project-filter-btn bg-slate-900 light:bg-slate-200 text-slate-300 light:text-slate-700 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-800 light:border-slate-300 transition-all">
+                        A/B Testing & Stats
+                    </button>
+                    <button onclick="filterProjects('engineering')" id="btn-engineering" class="project-filter-btn bg-slate-900 light:bg-slate-200 text-slate-300 light:text-slate-700 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-800 light:border-slate-300 transition-all">
+                        ETL & Engineering
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Project 1 -->
+                <div class="project-card glass-card rounded-xl border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col hover:border-brand-500/50 transition-all group" data-category="stats bi">
+                    <div class="p-6 space-y-4 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start">
+                            <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+                                A/B TESTING & BI
+                            </span>
+                            <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">
+                                40% TAT Reduction
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white light:text-slate-900 group-hover:text-brand-400 transition-colors">
+                            Loan Approval Turnaround Optimization
+                        </h3>
+
+                        <p class="text-xs text-slate-300 light:text-slate-600 line-clamp-3">
+                            Designed and executed an A/B test comparing pilot vs. standard loan approval workflows across multiple applications, structured and queried in BigQuery using SQL and Python.
+                        </p>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">A/B Testing</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">SQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Python</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">BigQuery</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Power BI</span>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800/80 light:border-slate-200 mt-auto flex items-center justify-between">
+                            <button onclick="openModal(1)" class="text-xs text-brand-400 hover:text-brand-300 font-medium flex items-center space-x-1">
+                                <span>View Deep Dive</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                            <span class="text-[11px] text-slate-400">Statistical Significance (p &lt; 0.001)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card rounded-xl border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col hover:border-brand-500/50 transition-all group" data-category="bi stats">
+                    <div class="p-6 space-y-4 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start">
+                            <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 font-mono">
+                                PREDICTIVE ANALYTICS
+                            </span>
+                            <span class="text-xs font-bold text-sky-400 bg-sky-950/60 px-2 py-0.5 rounded">
+                                91% Recall Rate
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white light:text-slate-900 group-hover:text-brand-400 transition-colors">
+                            Global Bank Customer Churn Prediction
+                        </h3>
+
+                        <p class="text-xs text-slate-300 light:text-slate-600 line-clamp-3">
+                            Built XGBoost classification model with SHAP feature explainability to detect high-risk customer account closures. Integrated automated retention tracking into Power BI.
+                        </p>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Python</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">XGBoost</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">SHAP</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Power BI</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">SQL</span>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800/80 light:border-slate-200 mt-auto flex items-center justify-between">
+                            <button onclick="openModal(2)" class="text-xs text-brand-400 hover:text-brand-300 font-medium flex items-center space-x-1">
+                                <span>View Deep Dive</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                            <span class="text-[11px] text-slate-400">4.5% Churn Reduction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card rounded-xl border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col hover:border-brand-500/50 transition-all group" data-category="engineering bi">
+                    <div class="p-6 space-y-4 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start">
+                            <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-mono">
+                                ETL & WAREHOUSING
+                            </span>
+                            <span class="text-xs font-bold text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded">
+                                +14% Risk Visibility
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white light:text-slate-900 group-hover:text-brand-400 transition-colors">
+                            360° Financial Analytics Platform
+                        </h3>
+
+                        <p class="text-xs text-slate-300 light:text-slate-600 line-clamp-3">
+                            Designed end-to-end ETL across 5 banking datasets into Google BigQuery. Engineered an automated loan aging engine in SQL & Python featuring NPA Flag calculations and Star Schema design.
+                        </p>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">SQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Python</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">BigQuery</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">ETL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Star Schema</span>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800/80 light:border-slate-200 mt-auto flex items-center justify-between">
+                            <button onclick="openModal(3)" class="text-xs text-brand-400 hover:text-brand-300 font-medium flex items-center space-x-1">
+                                <span>View Deep Dive</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                            <span class="text-[11px] text-slate-400">5 System Ingestions</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Work Experience & Certifications Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Experience Timeline -->
+            <section class="lg:col-span-7 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-white light:text-slate-900 flex items-center space-x-2">
+                        <i class="fa-solid fa-briefcase text-brand-400"></i>
+                        <span>Work Experience</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm">Professional impact and operational achievements</p>
+                </div>
+
+                <div class="relative pl-6 border-l-2 border-slate-800 light:border-slate-300 space-y-8">
+                    
+                    <!-- TCS Role -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-brand-600 border-4 border-slate-950 light:border-slate-50 group-hover:scale-125 transition-transform"></div>
+                        
+                        <div class="glass-card p-6 rounded-xl border border-slate-800 light:border-slate-200 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white light:text-slate-900">Data Analyst / Business Intelligence</h3>
+                                    <p class="text-xs text-brand-400 font-semibold">Tata Consultancy Services (TCS) • System Engineer</p>
+                                </div>
+                                <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-900 light:bg-slate-100 text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 w-max">
+                                    Nov 2022 - Aug 2026
+                                </span>
+                            </div>
+
+                            <ul class="space-y-2 text-xs text-slate-300 light:text-slate-600 list-disc list-inside leading-relaxed">
+                                <li>Designed and deployed enterprise Power BI dashboards using DAX, Power Query, and Star Schema design, eliminating <strong>12+ hours</strong> of weekly manual reporting.</li>
+                                <li>Integrated multi-source legacy relational databases into <strong>Google BigQuery</strong> using Python and Advanced SQL to centralize reporting architecture.</li>
+                                <li>Tuned SQL queries and data models to boost report responsiveness while maintaining <strong>99% pipeline accuracy</strong>.</li>
+                                <li>Automated validation scripts and REST API monitoring to troubleshoot data presentation and accessibility issues proactively.</li>
+                                <li>Translated requirements from cross-functional business leads into scalable data models and KPI frameworks.</li>
+                                <li>Executed Exploratory Data Analysis (EDA) on large transactional datasets to isolate actionable customer behavior trends.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Certifications & Awards -->
+            <section class="lg:col-span-5 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-white light:text-slate-900 flex items-center space-x-2">
+                        <i class="fa-solid fa-award text-brand-400"></i>
+                        <span>Honors & Certifications</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm">Recognitions & verified domain credentials</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- TCS Recognition Box -->
+                    <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3">
+                        <h3 class="text-sm font-bold text-white light:text-slate-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-trophy text-amber-400"></i>
+                            <span>TCS Internal Recognition</span>
+                        </h3>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div class="p-2 rounded bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-300 flex items-center space-x-2">
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i>
+                                <span>Best Team Award (x2)</span>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-300 flex items-center space-x-2">
+                                <i class="fa-solid fa-medal text-brand-400 text-[10px]"></i>
+                                <span>Star of the Month</span>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-300 flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-emerald-400 text-[10px]"></i>
+                                <span>Special Initiative</span>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900/60 light:bg-slate-100 border border-slate-800/80 light:border-slate-300 flex items-center space-x-2">
+                                <i class="fa-solid fa-handshake text-sky-400 text-[10px]"></i>
+                                <span>Service Commitment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Verified Credentials -->
+                    <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-3">
+                        <h3 class="text-sm font-bold text-white light:text-slate-900 flex items-center space-x-2">
+                            <i class="fa-solid fa-certificate text-brand-400"></i>
+                            <span>Verified Certifications</span>
+                        </h3>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/50 light:bg-slate-100">
+                                <span class="text-slate-200 light:text-slate-800">SQL (Intermediate)</span>
+                                <span class="text-brand-400 font-mono">HackerRank</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/50 light:bg-slate-100">
+                                <span class="text-slate-200 light:text-slate-800">Python (Basic)</span>
+                                <span class="text-brand-400 font-mono">HackerRank</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/50 light:bg-slate-100">
+                                <span class="text-slate-200 light:text-slate-800">Professional Fellowship - Data Analytics & BI</span>
+                                <span class="text-brand-400 font-mono">AlmaBetter</span>
+                            </div>
+                            <div class="flex items-center justify-between p-2 rounded bg-slate-900/50 light:bg-slate-100">
+                                <span class="text-slate-200 light:text-slate-800">Applied Data Analytics Certification</span>
+                                <span class="text-brand-400 font-mono">Applied BI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Box -->
+                    <div class="glass-card p-5 rounded-xl border border-slate-800 light:border-slate-200 space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-xs font-bold text-white light:text-slate-900">B.E. Mechanical Engineering</h4>
+                                <p class="text-[11px] text-slate-400">Jain College of Engineering & Technology, Hubli</p>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 light:bg-slate-200 text-slate-300 light:text-slate-700">7.5 CGPA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="glass-card rounded-2xl p-6 sm:p-10 border border-slate-800 light:border-slate-200 relative overflow-hidden">
+            <div class="max-w-2xl mx-auto space-y-6 text-center">
+                <div class="space-y-2">
+                    <h2 class="text-2xl font-bold text-white light:text-slate-900">Let's Connect & Discuss Opportunities</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm">Available for Data Analyst, Business Analyst, or BI Engineer roles across Bangalore, Hyderabad, Pune, or Remote.</p>
+                </div>
+
+                <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-left">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label class="text-xs text-slate-300 light:text-slate-700">Name</label>
+                            <input type="text" required placeholder="Your Name" class="w-full bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-300 rounded-lg p-2.5 text-xs text-white light:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs text-slate-300 light:text-slate-700">Email</label>
+                            <input type="email" required placeholder="you@company.com" class="w-full bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-300 rounded-lg p-2.5 text-xs text-white light:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-slate-300 light:text-slate-700">Subject / Role Opportunity</label>
+                        <input type="text" required placeholder="e.g. Data Analyst Role Opportunity" class="w-full bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-300 rounded-lg p-2.5 text-xs text-white light:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-slate-300 light:text-slate-700">Message</label>
+                        <textarea rows="4" required placeholder="Details about the role..." class="w-full bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-300 rounded-lg p-2.5 text-xs text-white light:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-medium text-xs sm:text-sm py-3 rounded-lg transition-all shadow-lg shadow-brand-600/30">
+                        Send Message Direct to Danish
+                    </button>
+                    <div id="contact-success" class="hidden text-xs text-emerald-400 text-center font-medium pt-2">
+                        Thank you! You can also email direct to <a href="mailto:daanishindian@gmail.com" class="underline">daanishindian@gmail.com</a>.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 light:border-slate-200 mt-auto bg-slate-950 light:bg-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <div>
+                © 2026 Danish Mulla. Built for Enterprise Analytics & BI.
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:daanishindian@gmail.com" class="hover:text-brand-400 transition-colors">Email</a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-brand-400 transition-colors">LinkedIn</a>
+                <a href="https://github.com/DanishMullaData" target="_blank" class="hover:text-brand-400 transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-3xl rounded-2xl border border-slate-800 light:border-slate-200 overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-slate-800 light:border-slate-200 flex justify-between items-start bg-slate-900/50">
+                <div class="space-y-1">
+                    <span id="modal-category" class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                        CATEGORY
+                    </span>
+                    <h3 id="modal-title" class="text-xl font-bold text-white light:text-slate-900">
+                        Project Title
+                    </h3>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="p-6 space-y-6 overflow-y-auto custom-scrollbar flex-grow text-xs text-slate-300 light:text-slate-600 leading-relaxed">
+                <!-- Overview & Impact -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-3 bg-slate-900/60 light:bg-slate-100 rounded-lg border border-slate-800 light:border-slate-200 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 uppercase">Primary Metric</span>
+                        <div id="modal-metric1" class="text-base font-bold text-emerald-400">--</div>
+                    </div>
+                    <div class="p-3 bg-slate-900/60 light:bg-slate-100 rounded-lg border border-slate-800 light:border-slate-200 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 uppercase">Data Scope</span>
+                        <div id="modal-metric2" class="text-base font-bold text-brand-400">--</div>
+                    </div>
+                    <div class="p-3 bg-slate-900/60 light:bg-slate-100 rounded-lg border border-slate-800 light:border-slate-200 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 uppercase">Deploy Engine</span>
+                        <div id="modal-metric3" class="text-base font-bold text-sky-400">--</div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-bold text-sm text-white light:text-slate-900">Architectural & Workflow Summary</h4>
+                    <p id="modal-description">Detailed description placeholder.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-bold text-sm text-white light:text-slate-900">Key Technical Deliverables</h4>
+                    <ul id="modal-bullets" class="list-disc list-inside space-y-1.5 text-slate-300 light:text-slate-600">
+                        <!-- Dynamic list items -->
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-bold text-sm text-white light:text-slate-900">Technologies Used</h4>
+                    <div id="modal-tech" class="flex flex-wrap gap-2">
+                        <!-- Tech badges -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-slate-800 light:border-slate-200 bg-slate-900/50 flex justify-end space-x-3">
+                <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-medium">
+                    Close
+                </button>
+                <a id="modal-github" href="https://github.com/DanishMullaData" target="_blank" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-medium flex items-center space-x-2">
+                    <i class="fa-brands fa-github"></i>
+                    <span>View GitHub Repository</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Project Data Store
+        const projectsData = {
+            1: {
+                category: "A/B TESTING & STATISTICAL ANALYSIS",
+                title: "Loan Approval Turnaround Optimization",
+                metric1: "~40% TAT Reduction",
+                metric2: "Multi-branch Pilot",
+                metric3: "BigQuery & Power BI",
+                description: "Designed and executed an A/B test comparing pilot vs. standard loan approval workflows across multiple applications, structured and queried in BigQuery using SQL and Python.",
+                bullets: [
+                    "Built a statistical hypothesis testing pipeline in Python to validate turnaround time improvements.",
+                    "Significance confirmed across all 3 key metrics (p < 0.001).",
+                    "Identified a ~40% reduction in average loan approval turnaround time under the pilot process.",
+                    "Delivered end-to-end analysis enabling stakeholders to make confident, quantified process-improvement decisions."
+                ],
+                tech: ["A/B Testing", "SQL", "Python", "BigQuery", "Power BI"],
+                github: "https://github.com/DanishMullaData"
+            },
+            2: {
+                category: "PREDICTIVE ANALYTICS & BI DASHBOARD",
+                title: "Global Bank Customer Churn Prediction",
+                metric1: "91% Recall Rate",
+                metric2: "Account Retention",
+                metric3: "XGBoost + SHAP",
+                description: "Built and compared three classification frameworks (Logistic Regression, Random Forest, XGBoost), selecting XGBoost to achieve an optimal 91% recall rate in predicting high-risk customer account closures.",
+                bullets: [
+                    "Engineered churn insights through EDA, uncovering key drivers such as inactive membership, low credit score, and age group using SQL and Python scripts.",
+                    "Applied SHAP (TreeExplainer) for model explainability, generating feature-level churn risk explanations for individual customers.",
+                    "Engineered an automated retention-tracking pipeline feeding a dynamic Power BI dashboard.",
+                    "Translated complex SHAP model outputs into real-time risk alerts that reduced customer churn by 4.5%."
+                ],
+                tech: ["Python", "XGBoost", "SHAP", "Power BI", "SQL"],
+                github: "https://github.com/DanishMullaData"
+            },
+            3: {
+                category: "ENTERPRISE ETL & FINANCIAL PLATFORM",
+                title: "360° Financial Analytics Platform",
+                metric1: "+14% Risk Visibility",
+                metric2: "5 Banking Datasets",
+                metric3: "Star Schema Engine",
+                description: "Designed and implemented an end-to-end ETL pipeline across 5 datasets (Loans, Customers, Branches, Transactions, LR), loading cleaned data into Google BigQuery for centralized analysis.",
+                bullets: [
+                    "Orchestrated advanced data preprocessing workflows via Python to isolate and resolve vector anomalies and standardize multi-source data inputs for warehouse readiness.",
+                    "Built an automated loan aging engine in SQL and Python to engineer key risk KPIs including NPA Flag, Loan Health Score, and Overdue Category bands.",
+                    "Improved risk visibility across the loan portfolio by up to 14%.",
+                    "Modeled target schemas into optimized Star Schema layouts to accelerate downstream SQL query performance and dashboard load times."
+                ],
+                tech: ["SQL", "Python", "BigQuery", "ETL", "Star Schema"],
+                github: "https://github.com/DanishMullaData"
+            }
+        };
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                icon.className = 'fa-solid fa-moon';
+            }
+        }
+
+        // Project Filter Logic
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.project-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white');
+                btn.classList.add('bg-slate-900', 'text-slate-300');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-900', 'text-slate-300');
+                activeBtn.classList.add('bg-brand-600', 'text-white');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    const cardCats = card.getAttribute('data-category');
+                    if (cardCats && cardCats.includes(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Global Search Filter
+        function handleSearch(query) {
+            const q = query.toLowerCase().trim();
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(q)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Handlers
+        function openModal(id) {
+            const data = projectsData[id];
+            if (!data) return;
+
+            document.getElementById('modal-category').innerText = data.category;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-metric1').innerText = data.metric1;
+            document.getElementById('modal-metric2').innerText = data.metric2;
+            document.getElementById('modal-metric3').innerText = data.metric3;
+            document.getElementById('modal-description').innerText = data.description;
+
+            const bulletsContainer = document.getElementById('modal-bullets');
+            bulletsContainer.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.innerText = b;
+                bulletsContainer.appendChild(li);
+            });
+
+            const techContainer = document.getElementById('modal-tech');
+            techContainer.innerHTML = '';
+            data.tech.forEach(t => {
+                const span = document.createElement('span');
+                span.className = 'px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-200 text-[10px] font-mono';
+                span.innerText = t;
+                techContainer.appendChild(span);
+            });
+
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Contact Form Submission Handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-success').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

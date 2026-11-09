@@ -301,7 +301,7 @@
             </div>
 
             <!-- Grid Container -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 
                 <!-- Project 1 -->
                 <div class="project-card glass-card rounded-xl border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col hover:border-brand-500/50 transition-all group" data-category="stats bi">
@@ -338,6 +338,45 @@
                                 <i class="fa-solid fa-chevron-right text-[10px]"></i>
                             </button>
                             <span class="text-[11px] text-slate-400">Statistical Significance (p &lt; 0.001)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 (New: Dynamic Price Elasticity) -->
+                <div class="project-card glass-card rounded-xl border border-slate-800 light:border-slate-200 overflow-hidden flex flex-col hover:border-brand-500/50 transition-all group" data-category="stats engineering bi">
+                    <div class="p-6 space-y-4 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start">
+                            <span class="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 font-mono">
+                                STATISTICS & PRICING
+                            </span>
+                            <span class="text-xs font-bold text-brand-400 bg-brand-950/60 px-2 py-0.5 rounded">
+                                p &lt; 0.01 Model Significance
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white light:text-slate-900 group-hover:text-brand-400 transition-colors">
+                            Dynamic Price Elasticity & Competitive Intelligence Engine
+                        </h3>
+
+                        <p class="text-xs text-slate-300 light:text-slate-600 line-clamp-3">
+                            Engineered an end-to-end pricing analytics pipeline in BigQuery. Built a Python log-log OLS regression model to calculate price elasticity across 20 product lines and developed competitor gap metrics.
+                        </p>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Statistics</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">SQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">BigQuery</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Python</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 light:bg-slate-100 text-[10px] text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-300 font-mono">Power BI</span>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800/80 light:border-slate-200 mt-auto flex items-center justify-between">
+                            <button onclick="openModal(4)" class="text-xs text-brand-400 hover:text-brand-300 font-medium flex items-center space-x-1">
+                                <span>View Deep Dive</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                            <span class="text-[11px] text-slate-400">20 Product Lines</span>
                         </div>
                     </div>
                 </div>
@@ -593,6 +632,7 @@
                 <a href="mailto:daanishindian@gmail.com" class="hover:text-brand-400 transition-colors">Email</a>
                 <a href="https://linkedin.com" target="_blank" class="hover:text-brand-400 transition-colors">LinkedIn</a>
                 <a href="https://github.com/DanishMullaData" target="_blank" class="hover:text-brand-400 transition-colors">GitHub</a>
+                <a href="https://danishmulladata.github.io/danishmulla_portfolio/" target="_blank" class="hover:text-brand-400 transition-colors">Portfolio</a>
             </div>
         </div>
     </footer>
@@ -716,6 +756,22 @@
                     "Modeled target schemas into optimized Star Schema layouts to accelerate downstream SQL query performance and dashboard load times."
                 ],
                 tech: ["SQL", "Python", "BigQuery", "ETL", "Star Schema"],
+                github: "https://github.com/DanishMullaData"
+            },
+            4: {
+                category: "STATISTICS & PRICING ANALYTICS",
+                title: "Dynamic Price Elasticity & Competitive Intelligence Engine",
+                metric1: "p < 0.01 Model Significance",
+                metric2: "20 Product Lines",
+                metric3: "Python OLS & Power BI",
+                description: "Engineered an end-to-end pricing analytics pipeline in Google BigQuery, using SQL data validation to clean and consolidate multi-source sales and competitor tables into a single warehouse layer.",
+                bullets: [
+                    "Built a Python log-log OLS regression model (statsmodels) to calculate price elasticity per product across all 20 product lines (p < 0.01).",
+                    "Identified 18 price-elastic items ranging from -0.77 (least sensitive P013) to -2.75 elasticity (most sensitive P003).",
+                    "Developed competitor price-gap metrics showing Competitor 1 priced +3.2% above and Competitor 2 priced -2.2% below own prices.",
+                    "Delivered an interactive Power BI dashboard translating elasticity and competitor gaps into price-increase and margin-protection strategies."
+                ],
+                tech: ["Statistics", "SQL", "BigQuery", "Python", "Power BI", "ETL"],
                 github: "https://github.com/DanishMullaData"
             }
         };
